@@ -1,4 +1,3 @@
-// common config
+'use strict'
 
-export default {
-}
+module.exports = {}

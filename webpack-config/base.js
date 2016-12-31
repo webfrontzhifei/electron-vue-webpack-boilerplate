@@ -12,12 +12,7 @@ module.exports = {
     },{
       test: /\.js$/,
       loader: 'babel-loader',
-      query: {
-          presets: ['es2015']
-      }
-    },{
-      test: /\.scss$/,
-      loaders: ['style', 'css', 'sass']
+      exclude: /node_modules/
     }]
   },
   output: {
@@ -30,7 +25,9 @@ module.exports = {
     extensions: ['', '.js', '.vue'],
     modulesDirectories: ['node_modules', 'src'],
     packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main'],
-    alias: {}
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
   },
   plugins: [
 

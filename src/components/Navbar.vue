@@ -1,23 +1,28 @@
 <template>
-    <div class="top-bar">
+  <div class="top-bar">
     <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text my-style">Vue Webgulp</li>
-        <li><a v-link="{name: 'home'}">Home</a></li>
-        <li><a v-link="{name: 'about'}">About</a></li>
-        <li><a v-link="{name: 'quote'}">Quote</a></li>
+      <ul class="dropdown menu">
+        <li class="menu-text my-style">Electron Vue Webpack Boierplate</li>
       </ul>
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-
+        <li>
+          <router-link to='/home'>Home</router-link>
+        </li>
+        <li>
+          <router-link to='/about'>About</router-link>
+        </li>
+        <li>
+          <router-link to='/quote'>Quote</router-link>
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "Navbar"
-  }
+export default {
+  name: 'Navbar'
+}
 </script>

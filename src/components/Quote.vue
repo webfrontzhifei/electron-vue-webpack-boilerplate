@@ -1,5 +1,4 @@
-<style lang="sass">
-  // Styles
+<style>
   .quote-wrapper{
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.14);
     padding: 2em;
@@ -23,17 +22,17 @@
   import QuoteService from '../services/quote'
 
   export default {
-    name: "Quote",
+    name: 'Quote',
 
-    data: function(){
+    data () {
       return {
-        quote: ""
+        quote: ''
       }
     },
 
-    ready: function() {
-      var quote  = QuoteService.getQuote(this).quote
-      this.$set('quote', quote);
+    ready: function () {
+      var quote = QuoteService.getQuote(this).quote
+      this.$set('quote', quote)
     }
   }
 </script>

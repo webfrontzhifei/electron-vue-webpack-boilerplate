@@ -11,41 +11,41 @@ import Quote from './components/Quote.vue'
 Vue.use(Router)
 Vue.use(Resource)
 
-// Set up a new router
-var router = new Router()
-
 // Route config
-router.map({
-  '/home':{
-    name: 'home',
-    component: Home,
+const routes = [
+  {
+    path: '/home',
+    component: Home
   },
-  '/about':{
-    name: 'about',
+  {
+    path: '/about',
     component: About
   },
-  '/quote':{
-    name: 'quote',
+  {
+    path: '/quote',
     component: Quote
+  },
+  {
+    path: '*',
+    redirect: '/home'
   }
+]
+
+const router = new Router({
+  routes // es6 syntax routes: routes
 })
 
-console.log('gsdgdsgggg');
 // For every new route scroll to the top of the page
-router.beforeEach(function () {
+router.beforeEach((from, to, next) => {
   window.scrollTo(0, 0)
+  next()
 })
 
-// If no route is matched redirect home
-router.redirect({
-  '*': '/home'
-})
+new Vue({
+  router,
+  render: createElement => createElement(App)
+}).$mount('#app')
 
-console.log('hahaha');
-
-// Start up our app
-router.start(App, '#app');
-
-if(module.hot) {
-    module.hot.accept();
+if (module.hot) {
+  module.hot.accept()
 }

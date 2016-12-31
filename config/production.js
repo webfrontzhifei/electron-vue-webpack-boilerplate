@@ -1,6 +1,7 @@
-import common from './common'
+'use strict'
 
-let configs = Object.assign({}, common);
-// add production configs
-
-export default configs
+module.exports = Object.assign({}, require('./common'), {
+  env: {
+    NODE_ENV: 'production'
+  }
+})
