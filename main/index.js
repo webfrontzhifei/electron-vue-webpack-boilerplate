@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const helper = require('electron-window-helper')
 const {app, Menu} = require('electron')
@@ -13,14 +13,15 @@ if (NODE_ENV === 'development') {
   require('electron-debug')()
 }
 
+helper.registeDevtools([
+  ['Vue.js devtools', 'nhdogjmejiglipccpnnnanhbledajbpd', '2.3.1_0']
+])
+
 app.on('ready', () => {
-  let mainWin = helper.open('main', url, {
+  console.log('ready', url, NODE_ENV)
+  helper.open('main', url, {
     width: 1024,
     height: 768,
     show: true
-  })
-
-  if (NODE_ENV === 'development') {
-    mainWin.openDevTools()
-  }
+  }, NODE_ENV === 'development')
 })

@@ -100,7 +100,7 @@
     "webpack-hot-middleware": "^2.13.2"
   },
   "dependencies": {
-    "electron-window-helper": "^0.0.7"
+    "electron-window-helper": "^0.0.8"
   },
   "repository": {
     "type": "git",
